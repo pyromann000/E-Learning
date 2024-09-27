@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <div id="badge" class="modal hidden">
+        <div class="modal-content">
+            <div  id="header-modal">You just got a badge!</div>
+            <img src="../WST Project/assets/cc badge unit 2.png" alt="Badge">
+            <p>Congratulations! You have finished Unit 2! You have finished this course too!</p>
+            <div id="modal-btns">
+                <button id="get-certificate">Get Certificate</button>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const closeModal = document.getElementById('close-modal');
+        const getCertificate = document.getElementById('get-certificate');
+       getCertificate.addEventListener('click', () => {
+    window.open('assets/certificate.pdf', '_blank');
+});
+    </script>
+</body>
+</html>

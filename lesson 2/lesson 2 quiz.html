@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 Quiz</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-style">
+        <div class="header">
+            <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+
+                <img class="logo" src="../assets/cc logo.png">
+               
+            </div>
+
+            <div class="collapse navbar-collapse" id="micon">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../home.html">HOME</a></li>
+                    <li><a href="../Profile.html">PROFILE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="header-quiz">
+        <div id="qheader">
+            <div id="quizzes">LESSON 2   QUIZ</div>
+            <div id="quiz">IF ELSE</div>
+        </div>
+        </div>
+
+<div class="container">
+    <div id="category">
+        <div id="true" class="droppable"></div>
+        <div id="label">TRUE</div>
+    </div>
+    <div id="category">
+        <div id="false" class="droppable"></div>
+        <div id="label">FALSE</div>
+    </div>
+</div>
+
+<div class="question-container">
+    <div id="question1" class="draggable" data-answer="false">1. An if-else statement in Java can have multiple else blocks.</div>
+    <div id="question2" class="draggable" data-answer="true">2. A for loop in Java is suitable for iterating over elements of an array or collection.</div>
+    <div id="question3" class="draggable" data-answer="true">3. An enhanced for-each loop (for-each) in Java can be used with any type of collection that implements the Iterable interface.</div>
+    <div id="question4" class="draggable" data-answer="true">4. A do-while loop in Java always executes its code block at least once.</div>
+    <div id="question5" class="draggable" data-answer="false">5. A while loop in Java always executes its code block at least once. </div>
+</div>
+
+<div id="info">
+    <div id="info2">
+        <div><button id="finish-btn" disabled>Finish Quiz</button></div>
+        <div id="score">SCORE: 0/5</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(function() {
+    $(".draggable").draggable({
+        revert: "invalid", // Revert the draggable element back to its original position if dropped outside a droppable area
+        start: function(event, ui) {
+            $(this).data("origPosition", ui.helper.position()); // Store the original position of the draggable element
+        }
+    });
+    
+    $(".droppable").droppable({
+        accept: ".draggable",
+        drop: function(event, ui) {
+            let $this = $(this);
+            let $dragged = ui.draggable;
+            
+            // Check if the dropped element is already in a droppable area
+            if ($dragged.parent().hasClass("droppable")) {
+                let $originalDroppable = $dragged.parent();
+                $originalDroppable.append($dragged.data("origPosition")); // Return the dragged element to its original position
+            }
+            
+            $this.append($dragged); // Append the dragged element to the droppable area
+            $dragged.css({ top: '0', left: '0' });
+            
+            // Check if all questions are dropped into droppable zones
+            if ($(".droppable .draggable").length === 5) {
+                $("#finish-btn").prop("disabled", false);
+            }
+        }
+    });
+
+    $("#finish-btn").click(function() {
+        let score = 0;
+        $(".draggable").each(function() {
+            let droppedItem = $(this);
+            let correctAnswer = $("#" + droppedItem.data("answer"));
+            if (droppedItem.parent().attr('id') === correctAnswer.attr('id')) {
+                score++;
+            }
+        });
+        $("#score").text("Score: " + score + "/5").show(); // Update and show the score
+        $("#finish-btn").prop("disabled", true);
+    // AJAX call to update XML when quiz is finished
+    $.ajax({
+    type: 'POST',
+    url: 'http://localhost/WST%20updated/update_xml.php',
+    data: { completed_level: 2 }, // Pass the completed level information
+    success: function(response) {
+        console.log(response); // Log the response
+    },
+    error: function(xhr, status, error) {
+        console.error("AJAX Error:", xhr.responseText); // Log detailed error message
+    }
+});
+
+    // Redirect to home.html after showing the score
+    setTimeout(function() {
+        window.location.href = "../home.html";
+    }, 3000); // Change 3000 to the desired delay in milliseconds
+});
+});
+
+</script>
+
+</body>
+</html>

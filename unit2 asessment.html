@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Assessment</title>
+    <link rel="stylesheet" href="WST%20updated/form-style.css">
+    <link rel="stylesheet" href="WST%20updated/navbarstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar-style">
+        <div id="logo-container">
+            <img class="logo" src="WST%20updated/assets/cc logo.png" alt="Logo">
+        </div>
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="home.html"><div id="nav-btns">HOME</div></a>
+                <a href="Profile.html"><div id="nav-btns">PROFILE</div></a>              
+            </div>
+        </div>
+    </div>
+
+    <div id="header-quiz">
+        <div id="qheader">
+            <div id="quizzes">UNIT 2 ASSESSMENT</div>
+            <div id="quiz">OOP CONCEPTS</div>
+        </div>
+        </div>
+    
+    <div id="form-container">
+        <form id="quiz-form">
+            <div id="questions-container" class="d-flex"></div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="badge" class="modal hidden">
+        <div class="modal-content">
+            <div  id="header-modal">You just got a badge!</div>
+            <img src="../WST Project/assets/cc badge unit 2.png" alt="Badge">
+            <p>Congratulations! You have finished Unit 2! You have finished this course too!</p>
+            <button id="get-certificate">Get Certificate</button>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const quizForm = document.getElementById('quiz-form');
+        const questionsContainer = document.getElementById('questions-container');
+        const resultDiv = document.getElementById('result');
+        const badge = document.getElementById('badge');
+        const closeModal = document.getElementById('close-modal');
+        const submitButton = document.querySelector('.submit-btn');
+        const getCertificate = document.getElementById('get-certificate');
+
+        let selectedQuestions = [];
+
+        // Function to load questions from the server
+        function loadQuestions() {
+            $.ajax({
+                url: 'get_questions2.php',
+                method: 'GET',
+                success: function(data) {
+                    selectedQuestions = data;
+                    generateQuestions(data);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Failed to load questions:", error);
+                }
+            });
+        }
+
+        // Function to generate HTML for questions
+        function generateQuestions(questions) {
+            questionsContainer.innerHTML = '';
+            questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question');
+                questionDiv.innerHTML = `
+                    <p>${index + 1}. ${question.text}</p>
+                    ${question.image ? `<img src="${question.image}" alt="Question image">` : ''}
+                    <div class="answers">
+                        ${question.options.map((option, optionIndex) => `
+                            <label>
+                                <input type="radio" name="q${index}" value="${option}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                questionsContainer.appendChild(questionDiv);
+            });
+            // Check if all questions are answered to enable submit button
+            checkAllQuestionsAnswered();
+        }
+
+        // Function to check if all questions are answered
+        function allQuestionsAnswered() {
+            const radioGroups = document.querySelectorAll('.answers');
+            for (let i = 0; i < radioGroups.length; i++) {
+                const radios = radioGroups[i].querySelectorAll('input[type="radio"]');
+                let answered = false;
+                for (let j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        answered = true;
+                        break;
+                    }
+                }
+                if (!answered) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Function to enable or disable the submit button based on question answers
+        function checkAllQuestionsAnswered() {
+            if (allQuestionsAnswered()) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Event listener to check answers on change
+        questionsContainer.addEventListener('change', checkAllQuestionsAnswered);
+
+        // Event listener for form submission
+        quizForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let score = 0;
+            const formData = new FormData(quizForm);
+            formData.forEach((value, key) => {
+                const index = key.substring(1); // Remove the 'q' prefix
+                const question = selectedQuestions[index];
+                if (value === question.answer) {
+                    score += 1;
+                }
+            });
+
+            resultDiv.textContent = `SCORE: ${score}/${selectedQuestions.length}`;
+            if (score >= 7) {
+                badge.classList.remove('hidden');
+                badge.style.display = 'flex';
+
+                // AJAX call to update XML when assessment 1 is submitted
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost/WST%20updated/update_xml_unit.php',
+                    data: { completed_level: 'assessment2' },
+                    success: function(response) {
+                        console.log(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error:", xhr.responseText);
+                    }
+                });
+            }
+        });
+
+        // Event listener to close the modal
+        closeModal.addEventListener('click', function() {
+            badge.classList.add('hidden');
+            badge.style.display = 'none';
+        });
+
+        // Event listener for getting the certificate
+        getCertificate.addEventListener('click', function() {
+            // Fetch the username from the session
+            $.ajax({
+                url: 'Get_Profile_data.php',
+                method: 'GET',
+                success: function(response) {
+                    const profileData = JSON.parse(response);
+                    const username = profileData.username;
+                    window.open(`certificate_template.html?username=${username}`, '_blank');
+                },
+                error: function(xhr, status, error) {
+                    console.error("Failed to fetch profile data:", error);
+                }
+            });
+        });
+
+        // Load questions when the page loads
+        loadQuestions();
+    </script>
+</body>
+</html>

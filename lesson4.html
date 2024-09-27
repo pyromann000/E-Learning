@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4</title>
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+    <div id="header-container">
+        <div id="header">
+            <div id="lessons">UNIT 2   LESSON 4</div>
+            <div id="lesson">ENCAPSULATION</div>
+        </div>
+    </div>
+
+    <div id="lesson-container">
+        <div id="lesson-proper">
+            <ul>
+            <li>It describes the ability of an object to hide its data and methods.</li>
+            <li>Encapsulation is also known as “data hiding.”</li><br>
+
+            <b>BENEFITS OF ENCAPSULATION:</b> <br>
+            <li>It improves maintainability, flexibility, and reusability.</li>
+            <li>The fields can be made read-only or write-only.</li>
+            <li>It restricts access only to those features of an object that are declared public.</li><br>
+
+            <li>In Java, a class encapsulates the fields that hold an object's state and the methods that define the object's actions.</li>
+            <li>Fields are encapsulated by declaring instance variables private and methods public.</li>
+            <li>An accessor or a getter method is a public method that returns data from a private instance variable.</li>
+            <li>A mutator or a setter method is a public method that changes the data stored in one or more private instance variables.</li><br>
+            </ul>
+
+            <b>Example:</b><br>
+            <img src="encap 1.png">
+            
+            <p>
+            <b>RULES IN IMPLEMENTING ENCAPSULATION</b> <br>
+                1. Instance variables are declared private.<br>
+                Ex. private String name;<br>
+                2. Names of getter methods begin with get if the property is not a<br>
+                boolean.<br>
+                Ex. public String getName() {<br>
+                return name;<br>
+                }<br>
+                3. Names of getter methods begin with is if the property is a boolean.<br>
+                Ex. public boolean isEnrolled() {<br>
+                return status;<br>
+                }<br>
+                4. Names of setter methods begin with set.<br>
+                Ex. public void setName(String name) {<br>
+                this.name = name;<br>
+                }<br>
+            </p>
+
+<strong>ABSTRACTION</strong> - Abstraction is a fundamental concept in software development that involves simplifying complex systems
+by focusing on essential characteristics while hiding unnecessary details.<br>
+
+<b>Fundamentals</b><br>
+
+Data abstraction is the process of hiding certain details and showing only essential information to the user.<br>
+Abstraction can be achieved with either abstract classes or interfaces.<br>
+• The abstract keyword is a non-access modifier, used for classes and methods:<br>
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).<br>
+
+ Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).<br><br>
+• An abstract class can have both abstract and regular methods:<br>
+• An abstract class is created to ensure that subclasses will implement necessary methods.<br><br>
+
+<b>Example:</b><br>
+<img src="encap 2.png">
+        </div>
+    </div>
+</body>
+</html>

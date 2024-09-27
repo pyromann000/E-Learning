@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<profiles>
+    <profile>
+        <username>Joaquin Sangria</username>
+        <email>wackysangria@gmail.com</email>
+        <password>adminone</password>
+        <profile_image>profile_images/bepop.jpg</profile_image>
+        <role>admin</role>
+        <achievement>
+            <quiz1>completed</quiz1>
+            <quiz2>completed</quiz2>
+            <assessment1>completed</assessment1>
+            <quiz3>completed</quiz3>
+            <quiz4>completed</quiz4>
+            <assessment2>completed</assessment2>
+        </achievement>
+        <account_created>2024-05-18 11:00:00</account_created>
+        <activity_log>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 11:12:19</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 11:55:18</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 15:07:10</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 17:27:55</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:18:52</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:21:39</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:21:45</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:24:11</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:24:15</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 12:12:54</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-19 12:13:41</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 12:15:56</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-19 12:16:12</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 14:29:34</timestamp>
+            </activity>
+        <activity><type>login</type><timestamp>2024-05-19 15:39:30</timestamp></activity><activity><type>logout</type><timestamp>2024-05-19 15:39:52</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:23:09</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:26:35</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:34:24</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:34:43</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:57:58</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 09:43:11</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 09:43:26</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 09:43:29</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 09:48:51</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:34:47</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:37:33</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:41:50</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:41:57</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:42:07</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:42:15</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:46:28</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:46:50</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:49:08</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:49:15</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 14:39:23</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 14:40:01</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 14:46:44</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 15:41:26</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 18:17:53</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 18:19:21</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 18:19:54</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 18:23:19</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 21:27:53</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 21:29:16</timestamp></activity><activity><type>login</type><timestamp>2024-05-21 06:21:24</timestamp></activity><activity><type>logout</type><timestamp>2024-05-21 16:19:37</timestamp></activity><activity><type>login</type><timestamp>2024-05-21 16:39:19</timestamp></activity><activity><type>logout</type><timestamp>2024-05-21 16:48:49</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 11:05:15</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 11:24:12</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 11:33:16</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 12:02:34</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 13:15:32</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 13:21:04</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 14:21:54</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 10:15:50</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 10:55:12</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:31:20</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 11:34:52</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:35:02</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 11:36:52</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:40:56</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 11:46:28</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:53:35</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 12:11:13</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 12:27:38</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 12:27:44</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 15:55:05</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:00:12</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:05:55</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:06:05</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:07:16</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:11:29</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:21:15</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:27:01</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:27:21</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:27:32</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:28:43</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:45:04</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:46:49</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 17:00:46</timestamp></activity></activity_log>
+    </profile>
+    
+    
+    
+    <profile>
+        <username>John Babaero Sulit</username>
+        <password>lolplayer</password>
+        <profile_image>profile_images/omegalu-liguess.gif</profile_image>
+        <role>user</role>
+        <achievement>
+            <quiz1>completed</quiz1>
+            <quiz2>completed</quiz2>
+            <assessment1>completed</assessment1>
+            <quiz3>incomplete</quiz3>
+            <quiz4>incomplete</quiz4>
+            <assessment2>completed</assessment2>
+        </achievement>
+        <email>callmezeke@gmail.com</email>
+        <account_created>2024-05-18 18:00:00</account_created>
+        <activity_log>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:22:03</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:22:45</timestamp>
+            </activity>
+        <activity><type>login</type><timestamp>2024-05-23 11:35:06</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:36:45</timestamp></activity></activity_log>
+    </profile>
+
+    <profile>
+        <username>bagonguser</username>
+        <email>bagonguser@gmail.com</email>
+        <password>bagonguser</password>
+        <profile_image>profile_images/Online Gantt 20240516.png</profile_image>
+        <role>user</role>
+        <achievement>
+            <quiz1>completed</quiz1>
+            <quiz2>incomplete</quiz2>
+            <assessment1>incomplete</assessment1>
+            <quiz3>incomplete</quiz3>
+            <quiz4>incomplete</quiz4>
+            <assessment2>incomplete</assessment2>
+        </achievement>
+        <account_created>2024-05-18 18:23:00</account_created>
+        <activity_log>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:23:13</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:23:31</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:24:00</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-18 18:24:06</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-18 18:25:18</timestamp>
+            </activity>
+        </activity_log>
+    </profile>
+
+    <profile>
+        <username>Jda Vasallo</username>
+        <email>jda@gmail.com</email>
+        <password>admindos</password>
+        <profile_image>profile_images/background.gif</profile_image>
+        <role>admin</role>
+        <achievement>
+            <quiz1>completed</quiz1>
+            <quiz2>completed</quiz2>
+            <assessment1>completed</assessment1>
+            <quiz3>incomplete</quiz3>
+            <quiz4>completed</quiz4>
+            <assessment2>completed</assessment2>
+        </achievement>
+        <account_created>2024-05-19 12:00:00</account_created>
+        <activity_log>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 12:14:14</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-19 12:15:51</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2023-05-19 12:16:17</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2023-05-19 12:16:53</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 12:16:57</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-19 12:48:06</timestamp>
+            </activity>
+            <activity>
+                <type>login</type>
+                <timestamp>2024-05-19 13:08:18</timestamp>
+            </activity>
+            <activity>
+                <type>logout</type>
+                <timestamp>2024-05-19 14:27:32</timestamp>
+            </activity>
+        <activity><type>logout</type><timestamp>2024-05-19 15:35:22</timestamp></activity><activity><type>login</type><timestamp>2024-05-19 15:35:53</timestamp></activity><activity><type>logout</type><timestamp>2024-05-19 15:39:05</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:42:20</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:46:01</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 12:46:09</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 12:46:18</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 12:02:51</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 12:19:05</timestamp></activity><activity><type>login</type><timestamp>2024-05-22 13:11:41</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 13:15:24</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 11:31:24</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:34:41</timestamp></activity></activity_log>
+    </profile>
+
+    <profile>
+        <username>Edward</username>
+        <email>edward@gmail.com</email>
+        <password>edwards</password>
+        <profile_image>profile_images/asuka.gif</profile_image>
+        <role>user</role>
+        <achievement>
+            <quiz1>completed</quiz1>
+            <quiz2>completed</quiz2>
+            <assessment1>completed</assessment1>
+            <quiz3>completed</quiz3>
+            <quiz4>completed</quiz4>
+            <assessment2>completed</assessment2>
+        </achievement>
+        <account_created>2024-05-17 10:00:00</account_created>
+    <activity_log><activity><type>login</type><timestamp>2024-05-20 08:26:53</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:29:18</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:34:48</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:36:39</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:36:50</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:46:54</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:51:22</timestamp></activity><activity><type>login</type><timestamp>2024-05-21 16:19:43</timestamp></activity><activity><type>logout</type><timestamp>2024-05-21 16:19:49</timestamp></activity></activity_log></profile>
+
+    
+<profile><username>askal</username><email>catdog@gmail.com</email><password>testing123</password><profile_image>profile_images/fb49172a-ab20-4810-94fc-3cb4ec442d50.jpg</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>incomplete</quiz2><assessment1>incomplete</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-19 15:35:38</account_created><activity_log><activity><type>login</type><timestamp>2024-05-20 14:40:06</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 14:46:35</timestamp></activity></activity_log></profile><profile><username>Kelsey Bautista</username><email>kelsey@gmail.com</email><password>kelsey</password><profile_image>profile_images/ZAQ88x.gif</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>completed</quiz2><assessment1>completed</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-20 08:29:44</account_created><activity_log><activity><type>login</type><timestamp>2024-05-20 08:29:49</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:34:07</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 08:54:17</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 08:57:50</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 18:18:08</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 18:19:17</timestamp></activity><activity><type>login</type><timestamp>2024-05-20 18:20:35</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 18:23:09</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 11:41:01</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 11:41:53</timestamp></activity></activity_log></profile><profile><username>Diwata Pares Overloard</username><email>overload@gmail.com</email><password>pheonix</password><profile_image>profile_images/436351289_1445325399755855_1882659148175806989_n.jpg</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>completed</quiz2><assessment1>incomplete</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-20 12:49:50</account_created><activity_log><activity><type>login</type><timestamp>2024-05-20 12:49:56</timestamp></activity><activity><type>logout</type><timestamp>2024-05-20 14:39:14</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:27:41</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:28:39</timestamp></activity></activity_log></profile><profile><username>Final Testing</username><email>ggnato@gmail.com</email><password>finalfinal</password><profile_image>profile_images/angry-black-snake-moan.gif</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>completed</quiz2><assessment1>completed</assessment1><quiz3>completed</quiz3><quiz4>completed</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-21 16:20:16</account_created><activity_log><activity><type>login</type><timestamp>2024-05-21 16:20:56</timestamp></activity><activity><type>logout</type><timestamp>2024-05-21 16:39:14</timestamp></activity></activity_log></profile><profile><username>Zikie</username><email>zikie@gmail.com</email><password>zikie123</password><profile_image>profile_images/111.png</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>completed</quiz2><assessment1>completed</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-22 13:21:22</account_created><activity_log><activity><type>login</type><timestamp>2024-05-22 13:21:50</timestamp></activity><activity><type>logout</type><timestamp>2024-05-22 13:25:36</timestamp></activity></activity_log></profile><profile><username>WuWa</username><email>wuwa@gmail.com</email><password>wuthering</password><profile_image>profile_images/436351289_1445325399755855_1882659148175806989_n.jpg</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>incomplete</quiz2><assessment1>incomplete</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-23 16:00:37</account_created><activity_log><activity><type>login</type><timestamp>2024-05-23 16:01:00</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:06:25</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:07:07</timestamp></activity><activity><type>login</type><timestamp>2024-05-23 16:27:06</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:27:13</timestamp></activity></activity_log></profile><profile><username>RonRon</username><email>ronron@gmail.com</email><password>ronron</password><profile_image>profile_images/parasyte-lock-in.gif</profile_image><role>user</role><achievement><quiz1>completed</quiz1><quiz2>incomplete</quiz2><assessment1>incomplete</assessment1><quiz3>incomplete</quiz3><quiz4>incomplete</quiz4><assessment2>incomplete</assessment2></achievement><account_created>2024-05-23 16:45:20</account_created><activity_log><activity><type>login</type><timestamp>2024-05-23 16:45:26</timestamp></activity><activity><type>logout</type><timestamp>2024-05-23 16:46:45</timestamp></activity></activity_log></profile></profiles>

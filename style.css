@@ -1,0 +1,311 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url('FreeSans.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Caprasimo';
+    src: url('Caprasimo-Regular.ttf') format('truetype');
+}
+
+
+body {
+    background-color: #ebf3fa;
+}
+
+#header-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 6%;
+}
+
+#header {
+    background-color:#D4E8FF ;
+    width: 71.5%;
+    border: 2px solid #E11F21;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#lessons {
+    font-size: 45px;
+    margin-right: 30%;
+    font-weight: bolder;
+    color: #0D6EB6;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#lessons3 {
+    font-size: 45px;
+    margin-right: 15%;
+    font-weight: bolder;
+    color: #0D6EB6;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#lesson {
+    font-size: 45px;
+    color: #E11F21;
+    font-family: Caprasimo;
+}
+
+
+#lesson-proper {
+    background-color:#D4E8FF ;
+    width: 70%;
+    border: 2px solid #0D6EB6;
+    padding: 20px;
+    justify-content: center;
+    text-align: left;
+    border-radius: 10px;
+    font-family: helvetica;
+    margin-bottom: 5px;
+}
+
+#lesson-container {
+    text-align: center;
+    display: flex;
+    justify-content: left;
+}
+
+.draggable { 
+    width: 30%;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+    cursor: move;
+    border-radius: 3px;
+}
+#category {
+    width: 400px; 
+    height: 350px; 
+    padding: 10px; 
+    margin: 10px; 
+    background-color: rgb(238, 238, 238);
+    font-family: helvetica;
+    text-align: center;
+    font-size: 20px;
+    color: #0D6EB6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: #0D6EB6 solid 1px;
+}
+
+.droppable {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 380px;
+    height: 380px;
+    align-items: center;
+    font-size: 12px;
+    display: flex;
+}
+
+#label {
+    margin-bottom: 20px;
+    font-family: caprasimo;
+    color: #0D6EB6;
+}
+
+/*
+.container {
+    display: flex;
+    justify-content: center;
+}*/
+
+.question-container{ 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    font-family: helvetica;
+}
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#finish-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: caprasimo;
+    border-radius: 5px;
+    color: #E11F21;
+    background-color: #D4E8FF;
+    border: #0D6EB6 solid 1px;
+    margin-bottom: 5px;
+}
+
+#finish-btn:disabled {
+    color: #e36e70;
+    background-color: #e0e6ed;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 15px;
+    background-color: rgb(204, 230, 239);
+    color: #0D6EB6;
+    border: solid 1px #0D6EB6;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+#score {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0D6EB6;
+    display: none;
+}
+
+#header-quiz {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 7%;
+}
+
+#qheader {
+    background-color:#f5dedf ;
+    width: 55%;
+    border: 2px solid #E11F21;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 7%;
+}
+
+#quizzes {
+    font-size: 30px;
+    margin-right: 20%;
+    font-weight: bolder;
+    color: #0D6EB6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#quiz {
+    font-size: 30px;
+    color: #E11F21;
+    font-family: caprasimo;
+}
+
+#lesson-container {
+    display: flex;
+    justify-content: center;
+}
+
+#lesson-box {
+    border:solid 2px #0D6EB6;
+    background-color: #D4E8FF;
+    width: 27%;
+    height: 45%;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    transition: transform 200ms cubic-bezier(.2,.8,.4,1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#lesson-box a, a , #unit a{
+    text-decoration: none;
+}
+
+/*
+#lesson-box:hover {
+	transform: scale(1.05);
+}
+
+#lesson-box:active {
+    transform: scale(0.2);
+}*/
+
+
+#lesson-name {
+    font-size: 45px;
+    color: #E11F21;
+    font-family: caprasimo;
+    margin-bottom: 20px;
+}
+
+#unit-label,#unit-label2 {
+    font-size: 45px;
+    font-weight: bolder;
+    text-align: center;
+    color: #0D6EB6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#lesson-desc {
+    font-size: 15px;
+    color: rgb(52, 52, 52);
+}
+
+#unit-label {
+    margin-top: 7%;
+}
+
+#unit-label2 {
+    margin-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contents {
+    border:solid 2px #0D6EB6;
+    background-color: #0D6EB6;
+    color: antiquewhite;
+    width: 59.5%;
+    font-family: caprasimo;
+    height: 45%;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    text-align: center;
+    font-size: 30px;
+}
+
+#exam-box {
+    display: flex;
+    justify-content: center;
+}
+
+#quiz-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#contents2 {
+    border:solid 2px #0D6EB6;
+    background-color: #0D6EB6;
+    color: antiquewhite;
+    width: 71.5%;
+    font-family: caprasimo;
+    height: 45%;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: left;
+    text-align: center;
+    font-size: 25px;
+}

@@ -1,0 +1,96 @@
+body {
+    background-color: #e1f1ff !important;
+}
+
+
+#menubarr {
+    background: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btns-container {
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+  }
+  
+  #nav-btns {
+      font-family: caprasimo;
+      color: #0D6EB6;
+      padding: 10px;
+      font-size: 25px;
+      text-decoration: none;
+  }
+  
+  .right-btns {
+      display: flex;
+      align-items: center;
+      
+      margin-right: 10%;
+  }
+  
+  #nav-btns:hover {
+      color:#E11F21 !important;
+      background-color: lightblue !important; 
+      text-decoration: none;
+      text-shadow: 0 0 3px #E11F21 !important;
+  }
+
+  
+  .logo {
+    width: 40%;
+    margin-left: 20%;
+}
+
+#lesson-box a, a {
+    text-decoration: none!important;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+}
+
+#label {
+    margin-top: 6%;
+    background-color: #0D6EB6;
+    color: aliceblue;
+    width: 75%;
+    text-align: center;
+    font-family: caprasimo;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+#cancel-btn {
+    background-color: #5ea5dc;
+    color: white;
+    border: none;
+}
+
+#cancel-btn:hover {
+    background-color: #42769d;
+}
+
+.table th {
+    background-color: #0D6EB6 !important;
+    border: solid 1px black !important;
+}
+
+.container {
+    border:solid 2px #0056b3 !important;
+    background-color: #F6F6F6 !important;
+    padding: 2% !important
+}

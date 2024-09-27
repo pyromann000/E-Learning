@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 Quiz</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .draggable {
+            cursor: move;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+
+        .droppable {
+            min-height: 50px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px dashed #999;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-style">
+        <div class="header">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#micon">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <img class="logo" src="cc logo.png">
+                </div>
+
+                <div class="collapse navbar-collapse" id="micon">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">PROFILE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="header-quiz">
+        <div id="qheader">
+            <div id="quizzes">LESSON 4   QUIZ</div>
+            <div id="quiz">ENCAPSULATION</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="category">
+            <div id="true" class="droppable"></div>
+            <div id="label">TRUE</div>
+        </div>
+        <div id="category">
+            <div id="false" class="droppable"></div>
+            <div id="label">FALSE</div>
+        </div>
+    </div>
+
+    <div class="question-container">
+        <div id="question1" class="draggable" data-answer="true">1. Inheritance allows a class to acquire all the attributes and behaviors of another class.</div>
+        <div id="question2" class="draggable" data-answer="true">2. A subclass is also known as a derived class or child class..</div>
+        <div id="question3" class="draggable" data-answer="false">3. Java supports multiple inheritance where a class may inherit from multiple parent classes.</div>
+        <div id="question4" class="draggable" data-answer="false">4. An abstract class is a class that can be instantiated and may contain concrete methods.</div>
+        <div id="question5" class="draggable" data-answer="true">5. Method overriding allows a subclass to provide a specific implementation of a method defined in its superclass. </div>
+    </div>
+
+    <div id="info">
+        <div id="info2">
+            <div><button id="finish-btn" disabled>Finish Quiz</button></div>
+            <div id="score">Score: 0/5</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $(".draggable").draggable({
+                revert: "invalid", // Revert the draggable element back to its original position if dropped outside a droppable area
+                start: function(event, ui) {
+                    $(this).data("origPosition", ui.helper.position()); // Store the original position of the draggable element
+                }
+            });
+
+            $(".droppable").droppable({
+                accept: ".draggable",
+                drop: function(event, ui) {
+                    let $this = $(this);
+                    let $dragged = ui.helper.clone(); // Clone the dragged element to preserve its appearance
+
+                    // Check if the dropped element is already in a droppable area
+                    if ($dragged.parent().hasClass("droppable")) {
+                        let $originalDroppable = $dragged.parent();
+                        $originalDroppable.append($dragged.data("origPosition")); // Return the dragged element to its original position
+                    }
+
+                    // Check if all questions are dropped into droppable zones
+                    if ($(".droppable .draggable").length === 5) {
+                        $("#finish-btn").prop("disabled", false);
+                    }
+                }
+            });
+
+            $("#finish-btn").click(function() {
+                let score = 0;
+                $(".draggable").each(function() {
+                    let droppedItem = $(this);
+                    let correctAnswer = $("#" + droppedItem.data("answer"));
+                    if (droppedItem.parent().attr('id') === correctAnswer.attr('id')) {
+                        score++;
+                    }
+                });
+                $("#score").text("Score: " + score + "/5").show(); // Update and show the score
+                $("#finish-btn").prop("disabled", true);
+            });
+        });
+
+    </script>
+
+</body>
+</html>

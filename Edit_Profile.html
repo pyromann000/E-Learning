@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="profile-style.css">
+    <link rel="stylesheet" href="navbarstyle.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+       
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        input[type="submit"],
+        .cancel-button,
+        .delete-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+            flex: 1;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    margin-right: 10px;
+    font-weight: bolder;
+}
+.delete-button {
+    background-color: #ff0000;
+    margin-left: 10px;
+    font-weight: bolder;
+}
+
+.delete-button:hover {
+    background-color: #c00404;
+}
+
+.cancel-button:hover {
+    background-color: #a42a36;
+}
+
+input[type="submit"]:hover {
+    background-color: #005dc1;
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="navbar-style">
+        <div id="logo-contianer">
+            <img class="logo" src="assets/cc logo.png">
+        </div>
+
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="home.html"><div id="nav-btns">HOME</div> </a>
+                <a href="Profile.html"><div id="nav-btns">PROFILE</div> </a>              
+            </div>
+        </div>
+    </div>
+
+
+    <div class="eprofile-container">
+        <h2>EDIT PROFILE</h2>
+        <form id="editProfileForm" enctype="multipart/form-data">
+            <label for="new_username">Edit Username:</label>
+            <input type="text" id="new_username" name="new_username">
+            
+            <label for="new_email">Edit Email:</label>
+            <input type="email" id="new_email" name="new_email">
+        
+            <label for="old_password">Old Password:</label>
+            <input type="password" id="old_password" name="old_password">
+        
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password">
+        
+            <label for="confirm_password">Confirm New Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password">
+        
+            <label for="profile_image">Upload Profile Image:</label>
+            <input type="file" id="profile_image" name="profile_image">
+        
+            <div class="button-container">
+                <input type="submit" value="UPDATE">
+                <button type="button" class="cancel-button" onclick="cancel()">CANCEL</button>
+                <button type="button" class="delete-button" onclick="deleteAccount()">DELETE ACCOUNT</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+$(document).ready(function(){
+    // Prepopulate form fields with current user data
+    $.ajax({
+        type: 'GET',
+        url: 'Get_Profile_Data.php',
+        success: function(data){
+            var profileData = JSON.parse(data);
+            $('#new_username').val(profileData.username);
+            $('#new_email').val(profileData.email);
+        },
+        error: function(xhr, status, error){
+            console.error(xhr.responseText);
+        }
+    });
+
+    // Handle form submission
+    $('#editProfileForm').submit(function(e){
+        e.preventDefault(); // Prevent default form submission
+
+        var formData = new FormData(this);
+
+        // Send Ajax request to Update_Profile.php for form submission
+        $.ajax({
+            type: 'POST',
+            url: 'Update_Profile.php',
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from setting the content type
+            success: function(response){
+                var res = JSON.parse(response);
+                if (res.status === "success") {
+                    // Redirect to profile page after successful update
+                    window.location.href = 'Profile.html';
+                } else {
+                    // Handle errors returned from PHP
+                    if (res.usernameErr) {
+                        alert("Error: " + res.usernameErr);
+                    }
+                    if (res.passwordErr) {
+                        alert("Error: " + res.passwordErr);
+                    }
+                    if (res.emailErr) {
+                        alert("Error: " + res.emailErr);
+                    }
+                }
+            },
+            error: function(xhr, status, error){
+                console.error(xhr.responseText);
+            }
+        });
+    });
+});
+
+// Handle cancel button
+function cancel() {
+    window.location.href = 'Profile.html';
+}
+
+// Handle delete account button
+function deleteAccount() {
+    if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+        $.ajax({
+            type: 'POST',
+            url: 'Delete_Profile.php',
+            success: function(response){
+                var res = JSON.parse(response);
+                if (res.status === "success") {
+                    // Redirect to the home page after successful deletion
+                    window.location.href = 'index.html';
+                } else {
+                    alert("Error: " + res.message);
+                }
+            },
+            error: function(xhr, status, error){
+                console.error(xhr.responseText);
+            }
+        });
+    }
+}
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Crafters</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbarstyle.css">
+    <style>
+        .locked {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-style">
+        <div id="logo-container">
+            <img class="logo" src="assets/cc logo.png">
+        </div>
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="home.html"><div id="nav-btns">HOME</div> </a>
+                <a href="Profile.html"><div id="nav-btns">PROFILE</div> </a>              
+            </div>
+        </div>
+    </div>
+
+    <div id="unit">
+        <div id="unit-label">UNIT 1</div>
+        <div id="lesson-container">
+            <div id="lesson-box">
+                <a id="lesson1-link" href="lesson 1/lesson1.html">
+                    <div id="lesson-name">LESSON 1</div>
+                    <div id="lesson-desc">BASIC SYNTAX</div>
+                </a>
+            </div>
+            <div id="lesson-box">
+                <a id="lesson2-link" href="lesson 2/lesson 2.html">
+                    <div id="lesson-name">LESSON 2</div>
+                    <div id="lesson-desc">IF-ELSE, LOOP, DO-WHILE</div>
+                </a>
+            </div>
+        </div>
+        <a id="assessment1-link" href="assessment1/asmnt1.html">
+            <div id="exam-box">
+                <div id="contents">TAKE UNIT 1 ASSESSMENT</div>
+            </div>
+        </a>
+
+        <div id="unit-label2">UNIT 2</div>
+        <div id="lesson-container">
+            <div id="lesson-box">
+                <a id="lesson3-link" href="lesson 3/lesson3.html">
+                    <div id="lesson-name">LESSON 3</div>
+                    <div id="lesson-desc">OOP CONCEPTS PART 1</div>
+                </a>
+            </div>
+            <div id="lesson-box">
+                <a id="lesson4-link" href="lesson 4/lesson4.html">
+                    <div id="lesson-name">LESSON 4</div>
+                    <div id="lesson-desc">OOP CONCEPTS PART 2</div>
+                </a>
+            </div>
+        </div>
+        <a id="assessment2-link" href="unit2 asessment.html">
+            <div id="exam-box">
+                <div id="contents">TAKE UNIT 2 ASSESSMENT</div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to fetch session data
+            function fetchSessionData() {
+                return fetch('session.php')
+                    .then(response => response.json());
+            }
+
+            // Function to fetch and parse XML data
+            function fetchProfileData() {
+                return fetch('Profiles.xml')
+                    .then(response => response.text())
+                    .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"));
+            }
+
+            // Function to lock links based on user achievements
+            function lockLinks(userAchievements) {
+                if (userAchievements.quiz1 !== "completed") {
+                    document.getElementById("lesson2-link").classList.add("locked");
+                    document.getElementById("assessment1-link").classList.add("locked");
+                }
+                if (userAchievements.assessment1 !== "completed") {
+                    document.getElementById("lesson3-link").classList.add("locked");
+                    document.getElementById("lesson4-link").classList.add("locked");
+                    document.getElementById("assessment2-link").classList.add("locked");
+                }
+            }
+
+            // Main function to initialize the locking mechanism
+            function initialize() {
+                fetchSessionData().then(sessionData => {
+                    if (sessionData.username) {
+                        fetchProfileData().then(xml => {
+                            const profiles = xml.getElementsByTagName("profile");
+                            let userAchievements = null;
+
+                            // Find the profile for the current user
+                            for (let profile of profiles) {
+                                const username = profile.getElementsByTagName("username")[0].textContent;
+                                if (username === sessionData.username) {
+                                    userAchievements = {
+                                        quiz1: profile.getElementsByTagName("quiz1")[0].textContent,
+                                        quiz2: profile.getElementsByTagName("quiz2")[0].textContent,
+                                        assessment1: profile.getElementsByTagName("assessment1")[0].textContent,
+                                        quiz3: profile.getElementsByTagName("quiz3")[0].textContent,
+                                        quiz4: profile.getElementsByTagName("quiz4")[0].textContent,
+                                        assessment2: profile.getElementsByTagName("assessment2")[0].textContent
+                                    };
+                                    break;
+                                }
+                            }
+
+                            // If user profile is found, lock the appropriate links
+                            if (userAchievements) {
+                                lockLinks(userAchievements);
+                            }
+                        });
+                    } else {
+                        // Handle the case where no user is logged in
+                        console.log("No user is logged in");
+                    }
+                });
+            }
+
+            // Initialize the locking mechanism
+            initialize();
+        });
+    </script>
+</body>
+</html>

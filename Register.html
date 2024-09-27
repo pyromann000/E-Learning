@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>/*
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            width: 350px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input {
+            display: block;
+            width: 88%;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 90px;
+            width: 50%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }*/
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+    
+            <input type="submit" value="Register">
+        </form>
+        <div class="register-link">
+            <p>Already have an account? <a href="index.html">Sign in here</a></p>
+        </div>
+
+        <div id="logo-container">
+            <img id="logo" src="assets/cc logo.png">
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+        $('#registerForm').submit(function(e){
+            e.preventDefault();
+            var username = $('#username').val();
+            var email = $('#email').val();
+            var password = $('#password').val();
+            
+            $.ajax({
+                type: 'POST',
+                url: 'Register.php', // Endpoint for authentication and registration
+                data: {
+                    username: username,
+                    email: email,
+                    password: password
+                },
+                success: function(response){
+                    if(response == 'success'){
+                        alert('Registration successful. You can now sign in.');
+                        window.location.href = 'index.html';
+                    } else {
+                        alert('Registration failed. Username or Email already exists. Please try again.');
+                    }
+                }
+            });
+        });
+    });
+    </script>
+    
+</body>
+</html>

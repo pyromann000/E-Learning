@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+    <question>
+        <text>Both the superclass and the subclass must have the same method name, the same return type and the same parameter list.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>What type of method is declared without braces but with a semicolon?</text>
+        <options>
+            <option>Abstract Method</option>
+            <option>Setter Method</option>
+            <option>Non-Abstract Method</option>
+        </options>
+        <answer>Abstract Method</answer>
+    </question>
+    <question>
+        <text>What type of method may only be defined in an abstract class?</text>
+        <options>
+            <option>Abstract Method</option>
+            <option>Setter Method</option>
+            <option>Non-Abstract Method</option>
+        </options>
+        <answer>Abstract Method</answer>
+    </question>
+    <question>
+        <text>What type of class cannot be instantiated directly?</text>
+        <options>
+            <option>Subclass</option>
+            <option>Abstract Class</option>
+            <option>Superclass</option>
+        </options>
+        <answer>Abstract Class</answer>
+    </question>
+    <question>
+        <text>What type of class cannot be used to create objects directly but must be inherited from another class?</text>
+        <options>
+            <option>Subclass</option>
+            <option>Abstract Class</option>
+            <option>Superclass</option>
+        </options>
+        <answer>Abstract Class</answer>
+    </question>
+    <question>
+        <text>It is the process of hiding certain details and showing only essential information to the user in programming.</text>
+        <options>
+            <option>Inheritance</option>
+            <option>Encapsulation</option>
+            <option>Abstraction</option>
+        </options>
+        <answer>Abstraction</answer>
+    </question>
+    <question>
+        <text>What Java construct allows for complete abstraction and supports multiple inheritance?</text>
+        <options>
+            <option>Abstract Class</option>
+            <option>Encapsulation</option>
+            <option>Interface</option>
+        </options>
+        <answer>Interface</answer>
+    </question>
+    <question>
+        <text>In Java, what mechanism binds data and code together as a single unit, ensuring the safety of data from modification?</text>
+        <options>
+            <option>Abstract Class</option>
+            <option>Encapsulation</option>
+            <option>Interface</option>
+        </options>
+        <answer>Encapsulation</answer>
+    </question>
+    <question>
+        <text>This keyword is a non-access modifier, used for classes and methods.</text>
+        <options>
+            <option>Abstract</option>
+            <option>Fields</option>
+            <option>Interface</option>
+        </options>
+        <answer>Abstract</answer>
+    </question>
+    <question>
+        <text>What term refers to encapsulated instance variables declared as private, along with public methods to access or modify them?</text>
+        <options>
+            <option>Mutator</option>
+            <option>Fields</option>
+            <option>Accessor</option>
+        </options>
+        <answer>Fields</answer>
+    </question>
+    <!-- More questions go here -->
+    <question>
+        <text>Abstract classes can be instantiated.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>Variables in Encapsulation should use what access modifier?</text>
+        <options>
+            <option>Private</option>
+            <option>Public</option>
+            <option>Protected</option>
+        </options>
+        <answer>Private</answer>
+    </question>
+    <question>
+        <text>What type of class cannot be used to create objects directly but must be inherited from another class?</text>
+        <options>
+            <option>Subclass</option>
+            <option>Abstract Class</option>
+            <option>Superclass</option>
+        </options>
+        <answer>Abstract Class</answer>
+    </question>
+    <question>
+        <text>Java supports multiple inheritance where a class may inherit from multiple parent classes.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>Inheritance allows a class to acquire all the attributes and behaviors of another class.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>True</answer>
+    </question>
+    <!-- More questions go here -->
+    <question>
+        <text>________ annotation specifies the compiler that the method after this annotation overrides the method of the superclass.</text>
+        <options>
+            <option>super()</option>
+            <option>@Override</option>
+            <option>extends</option>
+        </options>
+        <answer>@Override</answer>
+    </question>
+    <question>
+        <text>We should not always override abstract methods of the superclass.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>What type of class cannot be used to create objects directly but must be inherited from another class?</text>
+        <options>
+            <option>Subclass</option>
+            <option>Abstract Class</option>
+            <option>Superclass</option>
+        </options>
+        <answer>Abstract Class</answer>
+    </question>
+    <question>
+        <text>Inheritance is useful for?</text>
+        <options>
+            <option>Method Overriding</option>
+            <option>extends</option>
+            <option>Code Reusability</option>
+        </options>
+        <answer>Code Reusability</answer>
+    </question>
+    <question>
+        <text>______ is casting from a subclass to a superclass.</text>
+        <options>
+            <option>Upcasting</option>
+            <option>Downcasting</option>
+            <option>All of the above</option>
+        </options>
+        <answer>Upcasting</answer>
+    </question>
+     <!-- More questions go here -->
+     <question>
+        <text>______ is casting from superclass to a subclass.</text>
+        <options>
+            <option>Upcasting</option>
+            <option>Downcasting</option>
+            <option>All of the above</option>
+        </options>
+        <answer>@Downcasting</answer>
+    </question>
+    <question>
+        <text>The method in the subclass must be at least as accessible as the method in the parent class.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>True</answer>
+    </question>
+    <question>
+        <text>extends keyword is used to perform _______.</text>
+        <options>
+            <option>Inheritance</option>
+            <option>Abstraction</option>
+            <option>Polymorpism</option>
+        </options>
+        <answer>Inheritance</answer>
+    </question>
+    <question>
+        <text>Java supports multiple inheritance where a class may inherit from 2 or more direct parent class.</text>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>Extending multiple classes (multiple inheritance) are allowed.</text>
+        <options><option>True</option><option>False</option></options>
+        <answer>False</answer>
+    <image/></question>
+</questions>

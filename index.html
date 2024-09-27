@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="main-style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sign In</h2>
+        <form id="loginForm">
+            <label for="identifier">Username or Email</label>
+            <input type="text" id="identifier" name="identifier" required>
+    
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+    
+            <input type="submit" value="LOG IN">
+        </form>
+        <div class="register-link">
+            <p>Don't have an account? <a href="Register.html">Register here</a></p>
+        </div>
+
+        <div id="logo-container">
+            <img id="logo" style="width: 400px;" src="assets/cc logo.png">
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('#loginForm').submit(function(e){
+                e.preventDefault();
+                var identifier = $('#identifier').val();
+                var password = $('#password').val();
+        
+                $.ajax({
+                    type: 'POST',
+                    url: 'Authenticate.php',
+                    data: {
+                        identifier: identifier,
+                        password: password
+                    },
+                    success: function(response){
+                        var jsonResponse = JSON.parse(response);
+                        if(jsonResponse.status == 'failure'){
+                            alert(jsonResponse.message);
+                        } else if (jsonResponse.status == 'success'){
+                            window.location.href = jsonResponse.redirect;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

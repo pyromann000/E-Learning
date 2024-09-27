@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Manage Lessons</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="adashboard.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .btn-danger {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menubarr">
+        <div id="logo-contianer">
+            <img class="logo" src="assets/cc logo.png">
+        </div>
+
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="home.html"><div id="nav-btns">HOME</div> </a>
+                <a href="Profile.html"><div id="nav-btns">PROFILE</div> </a>              
+            </div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div id="label">Manage Lesson 4</div>
+    </div>
+    <div class="container">
+        <div class="text-right mb-3">
+            <button class="btn btn-secondary" onclick="luser()">List of Users</button>
+            <button class="btn btn-secondary" onclick="aclogs()">Activity Log</button>
+            <button class="btn btn-secondary" onclick="userachievements()">User Achievements</button>
+            <button class="btn btn-secondary" onclick="managelesson()">Manage Lesson/s</button>
+            <button class="btn btn-secondary" onclick="editass()">Manage Assessment/s</button>
+            <button class="btn btn-secondary" onclick="cancel()">Cancel</button>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" onclick="showAddLessonModal()">Add Lesson</button>
+            <button class="btn btn-primary" onclick="editlessonone()">Lesson 1</button>
+            <button class="btn btn-primary" onclick="editlessontwo()">Lesson 2</button>
+            <button class="btn btn-primary" onclick="editlessonthree()">Lesson 3</button>
+        </div>
+        <div class="table-responsive" id="lessonListContainer">
+            <table class="table table-striped table-bordered" id="lessonList">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Topic</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Image</th>
+                        <th>Section</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Lesson data will be appended here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div id="lessonModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Manage Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="lessonForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="lessonIndex" name="index">
+                        <div class="form-group">
+                            <label for="lessonTitle">Title</label>
+                            <input type="text" class="form-control" id="lessonTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonTopic">Topic</label>
+                            <input type="text" class="form-control" id="lessonTopic" name="topic" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonDescription">Description</label>
+                            <textarea class="form-control" id="lessonDescription" name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonExample">Example</label>
+                            <input type="text" class="form-control" id="lessonExample" name="example" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonImage">Image</label>
+                            <input type="text" class="form-control" id="lessonImage" name="image" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lessonSection">Section</label>
+                            <textarea class="form-control" id="lessonSection" name="section" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    loadLessons();
+
+    document.getElementById('lessonForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        saveLesson();
+    });
+});
+
+        function luser() {
+            window.location.href = 'AdminDashBoard.html';
+        }
+        function aclogs() {
+            window.location.href = 'ActivityLog.html';
+        }
+        function userachievements() {
+            window.location.href = 'userachivements.html';
+        }
+        function managelesson() {
+            window.location.href = 'editlesson2.html';
+        }
+        function editass() {
+            window.location.href = 'editass.html';
+        }
+        function cancel() {
+            window.location.href = 'Profile.html';
+        }
+        function editlessonone() {
+            window.location.href = 'editlesson1.html';
+        }
+        function editlessontwo() {
+            window.location.href = 'editlesson2.html';
+        }
+        function editlessonthree() {
+            window.location.href = 'editlesson3.html';
+        }
+
+
+        function loadLessons() {
+    fetch('lesson4_handler.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action: 'load' })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const lessonList = document.getElementById('lessonList').getElementsByTagName('tbody')[0];
+        lessonList.innerHTML = '';
+        data.lessons.forEach((lesson, index) => {
+            const row = lessonList.insertRow();
+            row.innerHTML = `
+                <td>${lesson.title}</td>
+                <td>${lesson.topic}</td>
+                <td>${lesson.description}</td>
+                <td>${lesson.example}</td>
+                <td>${lesson.image}</td>
+                <td>${lesson.section}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" onclick="editLesson(${index}, '${lesson.title}', '${lesson.topic}', '${lesson.description}', '${lesson.example}', '${lesson.image}', '${lesson.section}')">Edit</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteLesson(${index})">Delete</button>
+                </td>
+            `;
+        });
+    });
+}
+
+function showAddLessonModal() {
+    document.getElementById('lessonForm').reset();
+    document.getElementById('lessonIndex').value = '';
+    $('#lessonModal').modal('show');
+}
+
+function editLesson(index, title, topic, description, example, image, section) {
+    document.getElementById('lessonIndex').value = index;
+    document.getElementById('lessonTitle').value = title;
+    document.getElementById('lessonTopic').value = topic;
+    document.getElementById('lessonDescription').value = description;
+    document.getElementById('lessonExample').value = example;
+    document.getElementById('lessonImage').value = image;
+    document.getElementById('lessonSection').value = section;
+    $('#lessonModal').modal('show');
+}
+
+function saveLesson() {
+    const formData = new FormData(document.getElementById('lessonForm'));
+    const action = formData.get('index') === '' ? 'add' : 'update';
+    formData.append('action', action);
+
+    fetch('lesson4_handler.php', {
+        method: 'POST',
+        body: new URLSearchParams(formData)
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        $('#lessonModal').modal('hide');
+        loadLessons();
+    });
+}
+
+function deleteLesson(index) {
+    if (confirm('Are you sure you want to delete this lesson?')) {
+        fetch('lesson4_handler.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ action: 'delete', index: index })
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            loadLessons();
+        });
+    }
+}
+    </script>
+</body>
+</html>

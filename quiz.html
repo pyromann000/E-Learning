@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Drag and Drop Quiz</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+    #quiz-container {
+        margin: 50px auto;
+        width: 500px;
+    }
+    #question-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .question {
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        margin-bottom: 10px;
+        padding: 10px;
+        cursor: move;
+    }
+    .dropzone {
+        width: 200px;
+        height: 100px;
+        border: 2px dashed #ccc;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    #feedback {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <ul id="question-list">
+        <li class="question" data-correct="true">True Question 1</li>
+        <li class="question" data-correct="true">True Question 2</li>
+        <li class="question" data-correct="false">False Question 1</li>
+        <li class="question" data-correct="false">False Question 2</li>
+        <li class="question" data-correct="false">False Question 3</li>
+    </ul>
+    
+    <div id="true-dropzone" class="dropzone">
+        <h3>True</h3>
+    </div>
+    
+    <div id="false-dropzone" class="dropzone">
+        <h3>False</h3>
+    </div>
+    
+    <button id="finish-btn">Finish Quiz</button>
+    <div id="feedback"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function() {
+    $(".question").draggable({
+        revert: "invalid",
+        snap: ".dropzone",
+        snapMode: "inner"
+    });
+    
+    $(".dropzone").droppable({
+        accept: ".question",
+        drop: function(event, ui) {
+            ui.draggable.detach().appendTo($(this));
+        }
+    });
+
+    $("#finish-btn").click(function() {
+        var score = 0;
+        $(".dropzone").each(function() {
+            var correctAnswer = $(this).find(".question").data("correct");
+            var droppedItem = $(this).find(".question");
+            if (droppedItem.length && droppedItem.data("correct") === correctAnswer) {
+                score++;
+            }
+        });
+        var totalQuestions = $(".question").length;
+        var result = "You got " + score + " out of " + totalQuestions + " correct.";
+        $("#feedback").text(result);
+    });
+});
+</script>
+
+</body>
+</html>

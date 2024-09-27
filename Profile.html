@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile-style.css">
+    <link rel="stylesheet" href="navbarstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
+    
+    <style>
+    .button-container button,
+    .button-container input[type="submit"] {
+        display: block;
+        margin: 10px auto;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        width: 60%;
+    }
+    .button-container button:hover,
+    .button-container input[type="submit"]:hover {
+        background-color: #03376f;
+    }
+    input[type="submit"] {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 60%;
+    }
+    input[type="submit"]:hover {
+        background-color: #c82333;
+    }
+    .badge-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .badge {
+        margin: 10px;
+        width: 100px;
+    }
+    .locked-badge {
+        opacity: 0.5;
+    }
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-section {
+        width: 80%;
+        margin-top: 20px;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="navbar-style">
+        <div id="logo-contianer">
+            <img class="logo" src="assets/cc logo.png">
+        </div>
+
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="home.html"><div id="nav-btns">HOME</div> </a>
+                <a href="Profile.html"><div id="nav-btns">PROFILE</div> </a>              
+            </div>
+        </div>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container profile-content">
+            <div class="profile-section">
+                <h2>MY PROFILE</h2>
+                <div id="profileImageContainer">
+                    <img id="profileImage" src="#" class="profile-image" alt="Profile Image">
+                </div>
+                <div id="name-banner">Welcome<br></div>
+                    <span id="username" name="username"></span>
+                <div class="stats-container" id="completionCounts">
+                    <h3>Achievements</h3>
+                </div>
+                <div class="badge-section">
+                    <h3>Badges</h3>
+                    <div class="badge-container" id="badgeContainer">
+                        <!-- Badges will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button onclick="window.location.href='Edit_Profile.html'">EDIT PROFILE</button>
+                    <button id="adminDashboardButton" onclick="window.location.href='AdminDashboard.html'">Admin Dashboard</button>
+                </div>
+                <form action="Logout.php" method="POST">
+                    <input id="logout" type="submit" value="LOGOUT">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+$(document).ready(function(){
+    // Retrieve user data using Ajax
+    $.ajax({
+        type: 'GET',
+        url: 'Get_Profile_Data.php',
+        success: function(data){
+            var profileData = JSON.parse(data);
+            $('#username').text(profileData.username); // Update username
+
+            // Display profile image if available
+            if (profileData.profile_image) {
+                $('#profileImage').attr('src', profileData.profile_image);
+            } else {
+                $('#profileImage').attr('src', 'default_profile_image.jpg');
+            }
+
+            // Display completion counts
+            var completionCounts = profileData.completion_counts;
+            $.each(completionCounts, function(Level, status) {
+                $('#completionCounts').append('<p>' + Level + ': ' + status + '</p>');
+            });
+
+            // Display badges conditionally
+            if (completionCounts.assessment1 === 'completed') {
+                $('#badgeContainer').append('<img src="assets/cc badge unit 1.png" alt="First Badge" class="badge">');
+            } else {
+                $('#badgeContainer').append('<img src="assets/locked_badge.png" alt="First Badge Locked" class="badge locked-badge">');
+            }
+
+            if (completionCounts.assessment2 === 'completed') {
+                $('#badgeContainer').append('<img src="assets/cc badge unit 2.png" alt="Second Badge" class="badge">');
+            } else {
+                $('#badgeContainer').append('<img src="assets/locked_badge.png" alt="Second Badge Locked" class="badge locked-badge">');
+            }
+
+            // Show the admin dashboard button if the user is an admin
+            if (profileData.role === 'admin') {
+                $('#adminDashboardButton').show();
+            }
+        }
+    });
+
+    // Logout functionality
+    $('form[action="Logout.php"]').submit(function(e){
+        // Prevent the default form submission
+        e.preventDefault();
+        
+        // Display a confirmation dialog
+        if (confirm("Are you sure you want to log out?")) {
+            // If the user confirms, proceed with logout
+            $.ajax({
+                type: 'POST',
+                url: 'Logout.php', // Endpoint for logout
+                success: function(response){
+                    // Redirect to index.html after logout
+                    window.location.href = 'index.html';
+                }
+            });
+        } else {
+            // If the user cancels, do nothing
+            return false;
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
