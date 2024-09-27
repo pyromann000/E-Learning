@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<lesson1>
+    <lessons>
+        <title>Lesson 1</title>
+        <topic>The Basics</topic>
+        <description>Lets get to know the Syntax and print your first JAVA program!JAVA is an object-oriented programming language, its function is to create an object that contains data and methods. A JAVA program contains different parts, for the program to run successfully. Lets familiarize ourselves with its basic parts:</description>
+        <example>Example:</example>
+        <image>JAVA PARTS.png</image>
+        <section> Take a look.</section>
+    </lessons>
+<lessons>
+        <title>Lesson 1.1</title>
+        <topic>The Basics</topic>
+        <description>These lines of code are programmed to print an OUTPUT made out of text.</description>
+        <example>Here is the output of the code</example>
+        <image>2.png</image>
+        <section>In Java, the class keyword is used to define a class, which serves as a blueprint for creating objects. A class encapsulates data, specifies data types, and declares methods to manipulate that data. In every Java program, a main method must be present, as it serves as the entry point for execution. While you can create and name multiple classes, the program execution starts from the main method. The main method is a specific block of code that runs when the program is executed. Methods in Java, including the main method, can be named according to your preference. Another important method is println, which is used to print text or values to the console. The System class in Java provides various functionalities, including the out object that facilitates output operations. To print text using println, you enclose the desired text within double quotation marks and place it inside parentheses. Each class and method definition must be enclosed within curly brackets. Additionally, each executable statement in Java must end with a semicolon. This structure and syntax ensure that the Java code is correctly parsed and executed. Java is a case sensitive language, so it is crucial to maintain consistency in the naming of classes, methods, and variables. Note, JAVA is a case sensitive language, therefore the naming of objects, methods, and variables must match the words when it was first declared. And it must be consistent.</section>
+</lessons>
+
+<lessons>
+        <title>Lesson 1.2</title> 
+        <topic>Variables</topic>
+        <description>Just like other programming languages, java has a set of data types that is used to store data values.</description>
+        <example>The syntax for declaring a variable is:</example>
+        <image>3.png</image>
+        <section>Take a look.</section>
+</lessons>
+ <lessons>
+        <title>Lesson 1.3</title>
+        <topic>Variables</topic>
+        <description>Lets get to know the different data types!</description>
+        <example>Java provides various data types for storing different kinds of data. A `String` stores a sequence of characters and is enclosed in double quotation marks. For example, a String declaration is `String a = "Hello";`. An `int` stores whole numbers or integers, such as `int a = 23;`. A `float` stores decimal numbers and must be suffixed with an f. An example of a float declaration is `float a = 3.1416f;`. A `char` stores a single character and is enclosed in single quotation marks, for instance, `char a = b;`. A `boolean` stores a value of either true or false, like `boolean a = true;`.</example>
+        <image>4.png</image>
+        <section>It is important to note that in Java, a variable declaration can be overridden if declared multiple times. The last assigned value will be the "updated" value of the variable. For instance, if a variable `a` is declared as a String, you can print it using the `println()` function by passing the variable to it, like so: `System.out.println(a);`.</section>
+</lessons>
+
+<lessons>
+        <title>Lesson 1.4</title>
+        <topic>Comments</topic>
+        <description>To be able to communicate and promote collaboration specially in the group, each developer must understand what is meaning of each function easily. To explain the codes, methods, and etc. Developers use comments.</description>
+        <example>Example</example>
+        <image>5.png</image>
+        <section>In Java, a single-line comment is used to make an individual comment and is represented by two forward slashes. A multi-line comment can cover multiple lines of code or text and is enclosed between a slash and an asterisk to start the comment, and an asterisk and a slash to end it. The syntax for single-line comments is comment.</section>
+</lessons>
+
+
+<lessons>
+        <title>Lesson 1.5</title>
+        <topic>Meet the Operators!</topic>
+        <description>There are many operators involved in a program. An operators function is to perform a certain operation to a variable and produce a different output.</description>
+        <example>Assignment Operators</example>
+        <image>assignmentOperator.png</image>
+        <section>Is used to assign a value to a variable.</section>
+</lessons>
+<lessons>
+        <title>Lesson 1.6</title>
+        <topic>Meet the Operators!</topic>
+        <description>for Arithmetic Operators</description>
+        <example>Arithmetic Operators</example>
+        <image>arithmeticOperator.png</image>
+        <section>Is used to execute basic operations and control output of the program</section>
+</lessons>
+<lessons>
+        <title>Lesson 1.7</title>
+        <topic>Meet the Operators!</topic>
+        <description>for Relational Operators</description>
+        <example>Relational Operators</example>
+        <image>relationalOperators.png</image>
+        <section>Is used to perform conditional operations, and control the output of the program</section>
+</lessons>
+<lessons>
+        <title>Lesson 1.8</title>
+        <topic>Meet the Operators!</topic>
+        <description>for Logical Operators</description>
+        <example>Logical Operators</example>
+        <image>logicalOperator.png</image>
+        <section>like relational operators, it is also used to perform conditional operations. It heps to put together a two or more different conditions</section>
+</lessons>
+<lessons>
+        <title>Lesson1.9</title>
+        <topic>Lesson Conclusion!</topic>
+        <description>Java programming is an object-oriented programming language that creates objects containing data and methods. Java is case sensitive. It provides different data types, and values must be assigned to the appropriate data type for successful use. Comments are useful for explaining code, with two types of comments available, each having a specific scope of use. Additionally, there are various types of operators, each serving a specific function and offering distinct benefits and uses.</description>
+        <example>First code</example>
+        <image>2.png</image>
+        <section>Java programming is an object-oriented programming language that creates objects containing data and methods. Java is case sensitive. It provides different data types, and values must be assigned to the appropriate data type for successful use. Comments are useful for explaining code, with two types of comments available, each having a specific scope of use. Additionally, there are various types of operators, each serving a specific function and offering distinct benefits and uses. In summary, understanding these fundamental aspects of Java programming is essential for writing efficient and error-free code.</section>
+</lessons>
+</lesson1>

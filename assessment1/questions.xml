@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+    <question>
+        <text>The _________ is a line of code where it is used to create objects, declare data and its data types, and other method.</text>
+        <options>
+            <option>Objects</option>
+            <option>Class</option>
+            <option>Method</option>
+        </options>
+        <answer>Class</answer>
+    </question>
+    <question>
+        <text>Complete the code:</text>
+        <image>two.jpg</image>
+        <options>
+            <option>}</option>
+            <option>main</option>
+            <option>class</option>
+            <option>println</option>
+        </options>
+        <answer>class</answer>
+    </question>
+    <question>
+        <text>Choose the correct declaration: ___________  A.int 87;
+ B.int b = 23;
+ C.int c = 2.12; 
+D.int d = 2986499;</text>
+        <options>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </options>
+        <answer>D</answer>
+    </question>
+    <question>
+        <text>Is the code correct?</text>
+        <image>4.png</image>
+        <options>
+            <option>True</option>
+            <option>False</option>
+        </options>
+        <answer>False</answer>
+    </question>
+    <question>
+        <text>Is the code correct?</text>
+        <image>5.png</image>
+        <options>
+            <option>67</option>
+            <option>13</option>
+            <option>Error code</option>
+        </options>
+        <answer>13</answer>
+    </question>
+    <question>
+        <text>Complete the code:</text>
+        <image>6.png</image>
+        <options>
+            <option>:</option>
+            <option>;</option>
+        </options>
+        <answer>;</answer>
+    </question>
+    <question>
+        <text>Track the result</text>
+        <image>7.png</image>
+        <options>
+            <option>67</option>
+            <option>80</option>
+        </options>
+        <answer>80</answer>
+    </question>
+    <question>
+        <text>Track the result</text>
+        <image>8.png</image>
+        <options>
+            <option>True</option>
+            <option>False</option>
+            <option>Error code</option>
+        </options>
+        <answer>True</answer>
+    </question>
+    <question>
+        <text>Multiple Choice: Complete the syntax for the following code segment:</text>
+        <image>9.png</image>
+        <options>
+            <option>if(value&gt;75)</option>
+            <option>if(mark&gt;75)</option>
+            <option>if(score&gt;75)</option>
+            <option>if(grade&gt;75)</option>
+        </options>
+        <answer>if(grade&gt;75)</answer>
+    </question>
+    <question>
+        <text>In a for loop, the loop body is executed if the ________ evaluates to true.</text>
+        <options>
+            <option>initialization</option>
+            <option>update</option>
+            <option>condition</option>
+            <option>iteration</option>
+        </options>
+        <answer>condition</answer>
+    </question>
+    <question>
+        <text>How can you exit a do-while loop prematurely from within the loop body?</text>
+        <options>
+            <option>By using the break statement</option>
+            <option>By using the continue statement</option>
+            <option>By updating the loop condition</option>
+            <option>By re-declaring loop variables</option>
+        </options>
+        <answer>By using the break statement</answer>
+    </question>
+    <question>
+        <text>Identify the correct syntax for a while loop in Java.</text>
+        <options>
+            <option>while (condition) { // code block }</option>
+            <option>while { condition } ( // code block )</option>
+            <option>while (condition) // code block</option>
+            <option>while condition { // code block }</option>
+        </options>
+        <answer>while (condition) { // code block }</answer>
+    </question>
+    <question>
+        <text>What is the main purpose of a while loop in Java?</text>
+        <options>
+            <option>To execute a block of code once</option>
+            <option>To repeatedly execute a block of code as long as a condition is true</option>
+            <option>To declare variables within a loop</option>
+            <option>By using the break statement</option>
+        </options>
+        <answer>To repeatedly execute a block of code as long as a condition is true</answer>
+    </question>
+    <question>
+        <text>How do you ensure that a while loop eventually terminates?</text>
+        <options>
+            <option>By using an infinite loop</option>
+            <option>By updating the loop condition inside the loop</option>
+            <option>By initializing variables within the loop</option>
+            <option>To terminate the program</option>
+        </options>
+        <answer>By updating the loop condition inside the loop</answer>
+    </question>
+    <question>
+        <text>How is a for loop structured in Java?</text>
+        <options>
+            <option>for (declaration; iteration; update) { // code block }</option>
+            <option>for (initialization; condition; update) { // code block }</option>
+            <option>for (condition; initialization; update) { // code block }</option>
+            <option>for (initialization; update; condition) { // code block }</option>
+        </options>
+        <answer>for (initialization; condition; update) { // code block }</answer>
+    </question>
+        <question>
+            <text>Which of the following is the correct syntax to print "Hello, World!" in Java?</text>
+            <options>
+                <option>System.out.println("Hello, World!");</option>
+                <option>print("Hello, World!");</option>
+                <option>echo("Hello, World!");</option>
+                <option>printf("Hello, World!");</option>
+            </options>
+            <answer>System.out.println("Hello, World!");</answer>
+        </question>
+    
+        <question>
+            <text>Which of these data types is used to create a variable that should store text?</text>
+            <options>
+                <option>myString</option>
+                <option>String</option>
+                <option>string</option>
+                <option>Txt</option>
+            </options>
+            <answer>String</answer>
+        </question>
+    
+        <question>
+            <text>How do you create a variable with the numeric value 5?</text>
+            <options>
+                <option>int x = 5;</option>
+                <option>x = 5;</option>
+                <option>num x = 5;</option>
+                <option>int x;</option>
+            </options>
+            <answer>int x = 5;</answer>
+        </question>
+    
+        <question>
+            <text>Which method can be used to find the length of a string?</text>
+            <options>
+                <option>getLength()</option>
+                <option>len()</option>
+                <option>length()</option>
+                <option>getSize()</option>
+            </options>
+            <answer>length()</answer>
+        </question>
+    
+        <question>
+            <text>Which keyword is used to create a class in Java?</text>
+            <options>
+                <option>myClass</option>
+                <option>class</option>
+                <option>Class</option>
+                <option>newClass</option>
+            </options>
+            <answer>class</answer>
+        </question>
+    
+        <question>
+            <text>Which operator is used to add together two values?</text>
+            <options>
+                <option>The &gt; sign</option>
+                <option>The * sign</option>
+                <option>The + sign</option>
+                <option>The - sign</option>
+            </options>
+            <answer>The + sign</answer>
+        </question>
+    
+        <question>
+            <text>How do you call a method in Java?</text>
+            <options>
+                <option>methodName[];</option>
+                <option>methodName();</option>
+                <option>methodName{};</option>
+                <option>(methodName);</option>
+            </options>
+            <answer>methodName();</answer>
+        </question>
+    
+        <question>
+            <text>How do you start writing a while loop in Java?</text>
+            <options>
+                <option>while x &gt; y:</option>
+                <option>while (x &gt; y) {</option>
+                <option>while (x &gt; y)</option>
+                <option>while x &gt; y {</option>
+            </options>
+            <answer>while (x &gt; y) #123;</answer>
+        </question>
+    
+        <question>
+            <text>Which of the following is a correct array declaration in Java?</text>
+            <options>
+                <option>int[] arr;</option>
+                <option>arr[5];</option>
+                <option>int arr[5];</option>
+                <option>array arr;</option>
+            </options>
+            <answer>int[] arr;</answer>
+        </question>
+    
+        <question>
+            <text>How do you create an object in Java?</text>
+            <options><option>MyClass obj = new MyClass();</option><option>MyClass obj = MyClass();</option><option>new MyClass obj = new MyClass();</option><option>MyClass obj = MyClass;</option></options>
+            <answer>MyClass obj = new MyClass();</answer>
+        <image/></question>
+    </questions>

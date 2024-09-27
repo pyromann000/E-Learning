@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: The Java Basics</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbarstyle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.5;
+        }
+        p, li {
+            width: 900px;
+        }
+        img {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-style">
+        <div id="logo-contianer">
+            <img class="logo" src="../assets/cc logo.png">
+        </div>
+        <div class="right-btns">
+            <div class="btns-container">
+                <a href="../home.html"><div id="nav-btns">HOME</div></a>
+                <a href="../Profile.html"><div id="nav-btns">PROFILE</div></a>
+            </div>
+        </div>
+    </div>
+    <div id="header-container">
+        <div id="header">
+            <div id="lessons">UNIT 1 LESSON 1</div>
+            <div id="lesson">THE BASICS</div>
+        </div>
+    </div>
+    <div id="lesson-container">
+        <div id="lesson-proper" id="content">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+    </div>
+    <a href="lesson1 quiz.html">
+        <div id="quiz-btn">
+            <div id="contents2">Take Lesson 1 Quiz</div>
+        </div>
+    </a>
+    <script>
+        function loadXMLDoc(url, callback) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this.responseXML);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function createHTMLFromXML(xml) {
+            const contentDiv = document.getElementById('lesson-proper');  // Corrected ID reference
+            const lessons = xml.getElementsByTagName('lessons');
+
+            Array.from(lessons).forEach(lesson => {
+                const title = lesson.getElementsByTagName('title')[0]?.textContent || '';
+                const topic = lesson.getElementsByTagName('topic')[0]?.textContent || '';
+                const description = lesson.getElementsByTagName('description')[0]?.textContent || '';
+                const example = lesson.getElementsByTagName('example')[0]?.textContent || '';
+                const imageSrc = lesson.getElementsByTagName('image')[0]?.textContent || '';
+                const sections = lesson.getElementsByTagName('section');
+
+                if (title) {
+                    const titleElement = document.createElement('h1');
+                    titleElement.textContent = title;
+                    contentDiv.appendChild(titleElement);
+                }
+
+                if (topic) {
+                    const topicElement = document.createElement('h2');
+                    topicElement.textContent = topic;
+                    contentDiv.appendChild(topicElement);
+                }
+
+                if (description) {
+                    const descriptionElement = document.createElement('p');
+                    descriptionElement.textContent = description;
+                    contentDiv.appendChild(descriptionElement);
+                }
+
+                if (example) {
+                    const exampleElement = document.createElement('h3');
+                    exampleElement.textContent = example;
+                    contentDiv.appendChild(exampleElement);
+                }
+
+                if (imageSrc) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = `../lesson%201/${imageSrc}`;  // Assuming images are in the assets folder
+                    contentDiv.appendChild(imgElement);
+                }
+
+                Array.from(sections).forEach(section => {
+                    const sectionDesc = section.textContent;
+                    const sectionElement = document.createElement('p');
+                    sectionElement.textContent = sectionDesc;
+                    contentDiv.appendChild(sectionElement);
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadXMLDoc('getLesson1Data.php', createHTMLFromXML);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<lesson4>
+    <lessons>
+        <title>Lesson 4</title>
+        <topic>INHERITANCE</topic>
+        <description>Inheritance allows a class to acquire all the attributes and behaviors of another class. A class that is derived from another class is called a subclass, also known as a derived class or child class. The class from which the subclass is derived is called a superclass, also known as a base class or parent class. The extends keyword is used to perform inheritance.</description>
+        <example>Example:</example>
+        <image>example_1.png</image>
+        <section>In this example, Student is the subclass while Person is the superclass. Assuming that both classes are in the same package, an import statement is not required in Student.java to access the Person class. Inheritance is useful for code reusability because the code present in the parent class can be directly used by the child class. You can define a new version of an existing method in a child class that makes use of the definition in the parent class, a capability called method overriding.</section>
+    </lessons>
+     <lessons>
+        <title>Lesson 4.1</title>
+        <topic>Java Overriding Rules</topic>
+        <description>Both the superclass and the subclass must have the same method name, return type, and parameter list. The method in the subclass must be at least as accessible as the method in the parent class. Methods declared as final and static cannot be overridden. Abstract methods of the superclass must always be overridden. The @Override annotation specifies to the compiler that the method after this annotation overrides the method of the superclass.</description>
+        <example>Example:</example>
+        <image>example_1.png</image>
+        <section>In this scenario, the getMessage() method of SecondClass overrides the getMessage() method of FirstClass. When you override a method in a subclass, you can still access the overridden method from the superclass using the super keyword. This allows you to access the method of the parent class being overridden.</section>
+    </lessons>
+     <lessons>
+        <title>Lesson 4.2</title>
+        <topic>Uses of super Keywords</topic>
+        <description>In Java, the super keyword is utilized in subclasses for various purposes: accessing superclass members like attributes, constructors, and methods; calling overridden superclass methods in the subclass; accessing superclass attributes when both superclass and subclass have attributes with identical names; and explicitly invoking the superclass no-arg or parameterized constructor from the subclass constructor.</description>
+        <example>Example:</example>
+        <image>42.png</image>
+        <section>In this example, the super keyword is used to access the makeSound() method of the superclass Animal from the subclass Dog, allowing you to invoke the superclasss behavior in addition to the subclasss behavior.</section>
+    </lessons>
+     <lessons>
+        <title>Lesson 4.3</title>
+        <topic>Rules in Defining Constructors</topic>
+        <description>The first statement of every constructor is either a call to another constructor within the class using this() or a call to a constructor in the direct parent class using super().</description>
+        <example>Example:</example>
+        <image>example_3.png</image>
+        <section>1. In the Student class, the first statement of the primary constructor is a call to the constructor of the Person class. Additionally, the Student class includes a no-argument constructor that calls the other constructor within the class using this(No name yet.).</section>
+    </lessons>
+     <lessons>
+        <title>--</title>
+        <topic>2.</topic>
+        <description>The super() command may only be used as the first statement of the constructor.</description>
+        <example>Example:</example>
+        <image>example_4.png</image>
+        <section>The super() command is the second statement, which will lead to a compilation error.</section>
+    </lessons>
+    <lessons>
+        <title>--</title>
+        <topic>3.</topic>
+        <description>If a super() call is not explicitly declared in a constructor, Java will automatically insert a no-argument super() as the first statement of the constructor.</description>
+        <example>Example:</example>
+        <image>example_5.png</image>
+        <section>The Java compiler invisibly adds a no-argument constructor super() if the first statement is not a call to the parent constructor.</section>
+    </lessons>
+    <lessons>
+        <title>--</title>
+        <topic>4.</topic>
+        <description>If the parent class does not have a no-argument constructor and the child class does not define any constructors, the compiler will throw an error. This occurs because the child class has an invisible no-argument super() that attempts to call the constructor of the parent class.</description>
+        <example>Example:</example>
+        <image>example_6.png</image>
+        <section>The compiler automatically adds a no-argument constructor and a no-argument super() call to the subclass. However, if the superclass, such as the Person class in this case, lacks a no-argument constructor, it results in a compilation error.</section>
+    </lessons>
+    <lessons>
+        <title>--</title>
+        <topic>5.</topic>
+        <description>If the parent class lacks a no-argument constructor, the compiler mandates an explicit call to a parent constructor in each child constructor.</description>
+        <example>Example:</example>
+        <image>example_7.png</image>
+        <section>The constructor in Person can only be invoked if the Student specifies a String argument in the super() call of its constructor, such as super(Nissi).</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.4</title>
+        <topic>Calling Constructors and Overriding Methods</topic>
+        <description>The parent constructor is always executed before the child constructor.</description>
+        <example>Example:</example>
+        <image>example_8.png</image>
+        <section>The compiler initially inserts invisible super() commands as the first statements of both the Person and Student constructors. Following that, the compiler inserts an invisible default no-argument constructor in the FirstYear class with an invisible super() as the first statement of the constructor.</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.5</title>
+        <topic>POLYMORPHISM</topic>
+        <description>Allows the performing of a single action in different ways.</description>
+        <example>--</example>
+        <image>example_9.png</image>
+        <section>Static behavior in Java refers to decisions made at compile time rather than runtime. This is primarily achieved through method overloading, where the appropriate method to execute is determined based on the method signature during compilation, rather than during program execution.</section>
+    </lessons>
+    <lessons>
+        <title>2.</title>
+        <topic>--</topic>
+        <description>Dynamic behavior in Java involves decisions made at runtime, contrary to static behavior. Method overriding is the mechanism through which dynamic behavior is achieved. During program execution, the appropriate method to execute is determined based on the actual object type rather than the reference type, allowing for flexibility and polymorphic behavior.</description>
+        <example>--</example>
+        <image>example_10.png</image>
+        <section>Dynamic control in programming, achieved via method overriding, allows the flow of execution to be determined during runtime, enabling flexible behavior based on object types.</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.6</title>
+        <topic>OBJECT CASTING</topic>
+        <description>You can change the existing type of an object reference to another type through casting.</description>
+        <example>1.</example>
+        <image>example_11.png</image>
+        <section>Upcasting is casting from a subclass to a superclass.</section>
+    </lessons>
+     <lessons>
+        <title/>
+        <topic>OBJECT CASTING</topic>
+        <description>Downcasting is casting from a superclass to a subclass.</description>
+        <example>2.</example>
+        <image>example_12.png</image>
+        <section>--</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.7</title>
+        <topic>RULES IN CASTING OBJECTS</topic>
+        <description>1. The compiler will not allow casts to unrelated types.</description>
+        <example>--</example>
+        <image>example_13.png</image>
+        <section>There is no inheritance between the two (2) classes make that in sentence form</section>
+    </lessons>
+    <lessons>
+        <title>--</title>
+        <topic>RULES IN CASTING OBJECTS</topic>
+        <description>2.Even when the code compiles without issue, an exception may be thrown at runtime if the object being cast is not actually an instance of that class.</description>
+        <example>--</example>
+        <image>example_14.png</image>
+        <section>In the given context, the object referenced by a, does not belong to the class Cat; hence, attempting to cast it to type Cat would result in an error, as it is not an instance of that class.</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.8</title>
+        <topic>UNDERSTANDING METHOD OVERRIDING</topic>
+        <description>Method overriding allows a subclass to provide a specific implementation of a method that is already defined in its superclass.</description>
+        <example>Example:</example>
+        <image>43.png</image>
+        <section>The superclass Animal contains a method called makeSound(). Its subclasses, Dog and Cat, each provide their own implementations of the makeSound() method.</section>
+    </lessons>
+    <lessons>
+        <title>Lesson 4.9</title>
+        <topic>ABSTRACT CLASSES AND INTERFACES</topic>
+        <description>Abstract classes provide a blueprint for classes to inherit from, allowing for shared functionality and structure, while interfaces define a set of method signatures that classes must implement, ensuring consistency and enabling polymorphism.</description>
+        <example>Example:</example>
+        <image>49.png</image>
+        <section>Abstract classes cannot be instantiated and may contain abstract methods, like the Shape class with calculateArea(). Interfaces are collections of abstract methods and constants, implemented by classes to declare the methods theyll provide, such as the Shape interface with calculateArea().</section>
+    </lessons>
+</lesson4>
